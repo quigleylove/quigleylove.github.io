@@ -11306,7 +11306,7 @@ body:before {
   height: 100%;
   width: 100%;
   background-color: #ffffff;
-  opacity: 0.2;
+  opacity: 0;
   z-index: 1;
 }
 

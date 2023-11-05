@@ -16,9 +16,49 @@
 </head>
 
 <body>
-  <div style = "text-align: center; font-family: 'Oooh Baby', cursive; font-size: 30pt;">Guess their names!</div>
+  <div style = "text-align: center; font-family: 'Oooh Baby', cursive; font-size: 30pt;" id="title">Guess their names!</div>
 
-  <br><br><br>
+  <br><br>
+
+  <div id="winScreen0" style="display:none;">
+    <div class="gameBoard">
+      <div class="square wonBoy" ><div class="tileLetter" >T</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >H</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >O</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >M</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >A</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >S</div></div>
+    </div>
+    <div style = "text-align: center; font-family: 'Oooh Baby', cursive; font-size: 20pt;"><br>&<br><br></div>
+    <div class="gameBoard">
+      <div class="square wonGirl" ><div class="tileLetter" >A</div></div>
+      <div class="square wonGirl" ><div class="tileLetter" >M</div></div>
+      <div class="square wonGirl" ><div class="tileLetter" >E</div></div>
+      <div class="square wonGirl" ><div class="tileLetter" >L</div></div>
+      <div class="square wonGirl" ><div class="tileLetter" >I</div></div>
+      <div class="square wonGirl" ><div class="tileLetter" >A</div></div>
+    </div>
+  </div>
+
+  <div id="winScreen1" style="display:none;">
+    <div class="gameBoard">
+      <div class="square wonBoy" ><div class="tileLetter" >T</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >H</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >O</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >M</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >A</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >S</div></div>
+    </div>
+    <div style = "text-align: center; font-family: 'Oooh Baby', cursive; font-size: 20pt;"><br>&<br><br></div>
+    <div class="gameBoard">
+      <div class="square wonBoy" ><div class="tileLetter" >J</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >O</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >S</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >E</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >P</div></div>
+      <div class="square wonBoy" ><div class="tileLetter" >H</div></div>
+    </div>
+  </div>
 
   <div class="gameBoard" id="gameBoard">
     <div class="square"></div>
@@ -59,9 +99,9 @@
     <div class="square"></div>
   </div>
 
-  <br><br><br>
+  <br><br>
 
-  <div class="keyboard">
+  <div class="keyboard" id="keyboard">
     <div class="row">
       <button id="Q" draggable="true">Q</button>
       <button id="W" draggable="true">W</button>
@@ -98,9 +138,9 @@
   </div>
 
   <br>
-  <div style="text-align:center">
-    <button style="width:160px;height:32px;font-size:14pt;" onclick="checkHorizontal()">Check Horizontal</button>
-    <button style="width:142px;height:32px;font-size:14pt;" onclick="checkVertical()"">Check Vertical</button>
+  <div style="text-align:center" id="checkButtons">
+    <button style="width:160px;height:32px;font-size:14pt;background-color:#C2DCF2;" onclick="checkHorizontal()">Check Horizontal</button>
+    <button style="width:142px;height:32px;font-size:14pt;background-color:#F9E2E5;" onclick="checkVertical()" id="checkButtonVertical">Check Vertical</button>
   </div>
 
 </body>

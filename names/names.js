@@ -1,10 +1,13 @@
 mode = 0;
 correctAnswerH = "THOMAS";
 correctAnswerV = "AMELIA";
+let guessH = "";
+let guessV = "";
 
 if(mode == 1){
-    document.getElementById("gameBoard").innerHTML = '<div class="square"></div><div class="square"></div><div class="square playable"><div class="tileLetter" id="V1"></div></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square playable"><div class="tileLetter" id="H1"></div></div><div class="square playable"><div class="tileLetter" id="H2"></div></div><div class="square playable"><div class="tileLetter" id="H3"></div></div><div class="square playable"><div class="tileLetter" id="H4"></div></div><div class="square playable"><div class="tileLetter" id="H5"></div></div><div class="square playable"><div class="tileLetter" id="H6"></div></div><div class="square"></div><div class="square"></div><div class="square playable"><div class="tileLetter" id="V3"></div></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square playable"><div class="tileLetter" id="V4"></div></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square playable"><div class="tileLetter" id="V5"></div></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square playable"><div class="tileLetter" id="V6"></div></div><div class="square"></div><div class="square"></div><div class="square"></div>';
+    document.getElementById("gameBoard").innerHTML = '<div class="square"></div><div class="square"></div><div class="square playable" id="V1S"><div class="tileLetter" id="V1"></div></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square playable" id="H1S"><div class="tileLetter" id="H1"></div></div><div class="square playable" id="H2S"><div class="tileLetter" id="H2"></div></div><div class="square playable" id="H3S"><div class="tileLetter" id="H3"></div></div><div class="square playable" id="H4S"><div class="tileLetter" id="H4"></div></div><div class="square playable" id="H5S"><div class="tileLetter" id="H5"></div></div><div class="square playable" id="H6S"><div class="tileLetter" id="H6"></div></div><div class="square"></div><div class="square"></div><div class="square playable" id="V3S"><div class="tileLetter" id="V3"></div></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square playable" id="V4S"><div class="tileLetter" id="V4"></div></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square playable" id="V5S"><div class="tileLetter" id="V5"></div></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square"></div><div class="square playable" id="V6S"><div class="tileLetter" id="V6"></div></div><div class="square"></div><div class="square"></div><div class="square"></div>';
     correctAnswerV = "JOSEPH";
+    document.getElementById("checkButtonVertical").style.backgroundColor = "#C2DCF2";
 }
 
 // Get all the buttons and squares
@@ -30,7 +33,7 @@ for (let square of squares) {
   // When the drag enters the square, prevent the default behavior and change the square style
   square.addEventListener("dragenter", function(event) {
     event.preventDefault();
-    square.style.backgroundColor = "#F0F0F0";
+    //square.style.backgroundColor = "#F0F0F0";
   });
 
   // When the drag is over the square, prevent the default behavior
@@ -55,7 +58,7 @@ for (let square of squares) {
 function checkHorizontal(){
 
     guessH = document.getElementById("H1").innerHTML + document.getElementById("H2").innerHTML + document.getElementById("H3").innerHTML + document.getElementById("H4").innerHTML + document.getElementById("H5").innerHTML + document.getElementById("H6").innerHTML;
-    console.log(guessH.length);
+    //console.log(guessH.length);
     if(guessH.length == 6){
         if(guessH == correctAnswerH){
             document.getElementById("H1").style.animation = "pulse 1s";
@@ -77,6 +80,8 @@ function checkHorizontal(){
             document.getElementById("H5S").style.backgroundColor = "#B8D8BE";
             document.getElementById("H6").style.color = "white";
             document.getElementById("H6S").style.backgroundColor = "#B8D8BE";
+
+            checkWin();
         }
         else{
             document.getElementById("H1").style.animation = "shake 0.5s";
@@ -132,6 +137,8 @@ function checkVertical(){
             document.getElementById("V5S").style.backgroundColor = "#B8D8BE";
             document.getElementById("V6").style.color = "white";
             document.getElementById("V6S").style.backgroundColor = "#B8D8BE";
+
+            checkWin();
         }
         else{
             document.getElementById("V1").style.animation = "shake 0.5s";
@@ -158,4 +165,22 @@ function checkVertical(){
             document.getElementById("V6").style.color = "red";
         }
     }
+}
+
+function checkWin(){
+    if(guessH == correctAnswerH && guessV == correctAnswerV){
+        console.log("You win!");
+        document.getElementById("gameBoard").innerHTML = "";
+        document.getElementById("keyboard").innerHTML = "";
+        document.getElementById("checkButtons").innerHTML = "";
+        if(mode == 0){
+            document.getElementById("title").innerHTML = "Welcome Babies";
+            document.getElementById("winScreen0").style.display = "block";
+        }
+        else{
+            document.getElementById("title").innerHTML = "Welcome Babies";
+            document.getElementById("winScreen1").style.display = "block";
+        }
+    }
+
 }

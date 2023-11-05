@@ -1,0 +1,81 @@
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 64px));
+    grid-gap: 4px;
+    justify-content: center;
+  }
+
+.square {
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 4px;
+    }
+
+.tileLetter{
+    padding-top: 8px;
+    text-align: center;
+    font-size: 28pt;
+}
+
+.playable{
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    background-color:#f0f0f0;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.row {
+    display: flex;
+    margin: 2px;
+}
+
+button {
+    text-align: center;
+    width: 30px;
+    height: 40px;
+    border: 1px solid black;
+    margin: 4px;
+    font-size: 20px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+button:hover{
+    background-color: #E0E0E0;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  @keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}

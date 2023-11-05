@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Kevin Quigley">
+
+  <title>Names</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap" rel="stylesheet">
+
+  <link href="names.css" rel="stylesheet">
+</head>
+
+<body>
+  <div style = "text-align: center; font-family: 'Oooh Baby', cursive; font-size: 30pt;">Guess their names!</div>
+
+  <br><br><br>
+
+  <div class="gameBoard" id="gameBoard">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square playable" id="V1S"><div class="tileLetter" id="V1"></div></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square playable" id="H1S"><div class="tileLetter" id="H1"></div></div>
+    <div class="square playable" id="H2S"><div class="tileLetter" id="H2"></div></div>
+    <div class="square playable" id="H3S"><div class="tileLetter" id="H3"></div></div>
+    <div class="square playable" id="H4S"><div class="tileLetter" id="H4"></div></div>
+    <div class="square playable" id="H5S"><div class="tileLetter" id="H5"></div></div>
+    <div class="square playable" id="H6S"><div class="tileLetter" id="H6"></div></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square playable" id="V3S"><div class="tileLetter" id="V3"></div></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square playable" id="V4S"><div class="tileLetter" id="V4"></div></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square playable" id="V5S"><div class="tileLetter" id="V5"></div></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square playable" id="V6S"><div class="tileLetter" id="V6"></div></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </div>
+
+  <br><br><br>
+
+  <div class="keyboard">
+    <div class="row">
+      <button id="Q" draggable="true">Q</button>
+      <button id="W" draggable="true">W</button>
+      <button id="E" draggable="true">E</button>
+      <button id="R" draggable="true">R</button>
+      <button id="T" draggable="true">T</button>
+      <button id="Y" draggable="true">Y</button>
+      <button id="U" draggable="true">U</button>
+      <button id="I" draggable="true">I</button>
+      <button id="O" draggable="true">O</button>
+      <button id="P" draggable="true">P</button>
+    </div>
+    <div class="row">
+      <button id="A" draggable="true">A</button>
+      <button id="S" draggable="true">S</button>
+      <button id="D" draggable="true">D</button>
+      <button id="F" draggable="true">F</button>
+      <button id="G" draggable="true">G</button>
+      <button id="H" draggable="true">H</button>
+      <button id="J" draggable="true">J</button>
+      <button id="K" draggable="true">K</button>
+      <button id="L" draggable="true">L</button>
+    </div>
+    <div class="row">
+      <button id="Z" draggable="true">Z</button>
+      <button id="X" draggable="true">X</button>
+      <button id="C" draggable="true">C</button>
+      <button id="V" draggable="true">V</button>
+      <button id="B" draggable="true">B</button>
+      <button id="N" draggable="true">N</button>
+      <button id="M" draggable="true">M</button>
+      <button id="" draggable="true"></button>
+    </div>
+  </div>
+
+  <br>
+  <div style="text-align:center">
+    <button style="width:160px;height:32px;font-size:14pt;" onclick="checkHorizontal()">Check Horizontal</button>
+    <button style="width:142px;height:32px;font-size:14pt;" onclick="checkVertical()"">Check Vertical</button>
+  </div>
+
+</body>
+
+<script src="DragDropTouch.js"></script>
+<script src="names.js"></script>
+
+</html>

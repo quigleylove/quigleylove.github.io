@@ -52,6 +52,7 @@ for (let square of squares) {
     const buttonId = event.dataTransfer.getData("text/plain");
     square.querySelector(".tileLetter").innerHTML = buttonId;
     square.querySelector(".tileLetter").style.color = "black";
+    square.style.backgroundColor = "#F0F0F0";
   });
 }
 
@@ -84,7 +85,24 @@ function checkHorizontal(){
             checkWin();
         }
         else{
-            document.getElementById("H1").style.animation = "shake 0.5s";
+            for(var i = 0; i < 6; i++){
+                space = "H" + (i+1).toString();
+                if(guessH.charAt(i) == correctAnswerH.charAt(i)){
+                    if(document.getElementById(space).style.color != "white"){
+                        document.getElementById(space).style.color = "green";
+                    }
+                }
+                else if(correctAnswerH.includes(guessH.charAt(i))){
+                    document.getElementById(space).style.color = "#DAA520";
+                    document.getElementById(space).style.animation = "shake 0.5s";
+                }
+                else{
+                    document.getElementById(space).style.color = "red";
+                    document.getElementById(space).style.animation = "shake 0.5s";
+                }
+            }
+
+            /*document.getElementById("H1").style.animation = "shake 0.5s";
             document.getElementById("H2").style.animation = "shake 0.5s";
             document.getElementById("H3").style.animation = "shake 0.5s";
             document.getElementById("H4").style.animation = "shake 0.5s";
@@ -95,7 +113,7 @@ function checkHorizontal(){
             document.getElementById("H3").style.color = "red";
             document.getElementById("H4").style.color = "red";
             document.getElementById("H5").style.color = "red";
-            document.getElementById("H6").style.color = "red";
+            document.getElementById("H6").style.color = "red";*/
         }
     }
 }
@@ -141,7 +159,33 @@ function checkVertical(){
             checkWin();
         }
         else{
-            document.getElementById("V1").style.animation = "shake 0.5s";
+            for(var i = 0; i < 6; i++){
+                if(mode == 0 && i == 1){
+                    space = "H4";
+                }
+                else if(mode == 1 && i == 1){
+                    space = "H3";
+                }
+                else{
+                    space = "V" + (i+1).toString();
+                }
+
+                if(guessV.charAt(i) == correctAnswerV.charAt(i)){
+                    if(document.getElementById(space).style.color != "white"){
+                        document.getElementById(space).style.color = "green";
+                    }
+                }
+                else if(correctAnswerV.includes(guessV.charAt(i))){
+                    document.getElementById(space).style.color = "#DAA520";
+                    document.getElementById(space).style.animation = "shake 0.5s";
+                }
+                else{
+                    document.getElementById(space).style.color = "red";
+                    document.getElementById(space).style.animation = "shake 0.5s";
+                }
+            }
+
+            /*document.getElementById("V1").style.animation = "shake 0.5s";
             if(mode == 0){
                 document.getElementById("H4").style.animation = "shake 0.5s";
             }
@@ -162,7 +206,7 @@ function checkVertical(){
             document.getElementById("V3").style.color = "red";
             document.getElementById("V4").style.color = "red";
             document.getElementById("V5").style.color = "red";
-            document.getElementById("V6").style.color = "red";
+            document.getElementById("V6").style.color = "red";*/
         }
     }
 }
@@ -170,17 +214,19 @@ function checkVertical(){
 function checkWin(){
     if(guessH == correctAnswerH && guessV == correctAnswerV){
         console.log("You win!");
-        document.getElementById("gameBoard").innerHTML = "";
-        document.getElementById("keyboard").innerHTML = "";
-        document.getElementById("checkButtons").innerHTML = "";
-        if(mode == 0){
-            document.getElementById("title").innerHTML = "Welcome Babies";
-            document.getElementById("winScreen0").style.display = "block";
-        }
-        else{
-            document.getElementById("title").innerHTML = "Welcome Babies";
-            document.getElementById("winScreen1").style.display = "block";
-        }
+        setTimeout(function() {
+            // code to execute after the delay
+            document.getElementById("gameBoard").innerHTML = "";
+            document.getElementById("keyboard").innerHTML = "";
+            document.getElementById("checkButtons").innerHTML = "";
+            if(mode == 0){
+                document.getElementById("title").innerHTML = "Welcome Babies";
+                document.getElementById("winScreen0").style.display = "block";
+            }
+            else{
+                document.getElementById("title").innerHTML = "Welcome Babies";
+                document.getElementById("winScreen1").style.display = "block";
+            }
+          }, 1000);
     }
-
 }
